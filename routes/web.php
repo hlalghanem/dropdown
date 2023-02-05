@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DropdownController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('dropdown', [DropdownController::class, 'view'])->name('dropdownView');
+Route::get('get-states', [DropdownController::class, 'getStates'])->name('getStates');
+Route::get('get-cities', [DropdownController::class, 'getCities'])->name('getCities');
